@@ -23,5 +23,7 @@
 class Schedule < ApplicationRecord
   validates :start_time, :end_time, presence: true
 
+  has_many  :appointments
+
   belongs_to  :doctor, class_name: 'User', foreign_key: :user_id
 end
