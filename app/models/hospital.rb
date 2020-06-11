@@ -9,4 +9,5 @@
 #  updated_at :datetime         not null
 #
 class Hospital < ApplicationRecord
+  validates :name, :address, presence: true
 end

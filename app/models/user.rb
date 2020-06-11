@@ -25,6 +25,8 @@ class User < ApplicationRecord
   validates_format_of :email, with: /@/
   validates :password_digest, :role_id, presence: true
 
+  has_many  :schedules
+
   belongs_to  :role
 
   after_create  :create_token

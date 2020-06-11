@@ -49,3 +49,19 @@ if Hospital.all.empty?
     })
   end
 end
+
+# Create schedules for doctors
+if Schedule.all.empty?
+  User.doctors.each do |doctor|
+    Date.current.upto(Date.current + 30.days) do |date|
+      start_time = date + 9.hours
+      end_time = start_time + 3.hours
+      Schedule.create({
+        start_time: start_time,
+        end_time: end_time,
+        user_id: doctor.id,
+        hospital_id: Hospital.all.sample.id
+      })
+    end
+  end
+end

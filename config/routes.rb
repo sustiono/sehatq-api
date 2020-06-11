@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :users, only: :create
       resources :doctors, only: :index
       resources :hospitals, only: :index
+      resources :appointments, only: :create
     end
   end
 end
