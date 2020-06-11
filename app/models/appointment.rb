@@ -21,6 +21,16 @@
 class Appointment < ApplicationRecord
   validates :schedule_id, :user_id, presence: true
 
+  before_validation :time_validation
+
   belongs_to  :patient, class_name: 'User', foreign_key: :user_id
   belongs_to  :doctor_schedule, class_name: 'Schedule', foreign_key: :schedule_id
+
+  private
+
+  def time_validation
+    if DateTime.current < doctor_schedule.start_time  || DateTime.current > doctor_schedule.end_time
+      self.errors.add(:time, 'Make an appointment within 30 minutes before the schedule starts')
+    end
+  end
 end
