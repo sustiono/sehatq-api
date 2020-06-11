@@ -9,4 +9,12 @@
 #
 class Role < ApplicationRecord
   has_many  :users
+
+  def self.doctor
+    find_by(name: 'Doctor')
+  end
+
+  def self.patient
+    find_by(name: 'Patient')
+  end
 end

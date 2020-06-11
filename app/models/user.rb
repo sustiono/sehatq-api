@@ -19,8 +19,6 @@
 #  fk_rails_...  (role_id => roles.id)
 #
 class User < ApplicationRecord
-  require 'json_web_token'
-
   has_secure_password
 
   validates :email, uniqueness: true
@@ -30,6 +28,14 @@ class User < ApplicationRecord
   belongs_to  :role
 
   after_create  :create_token
+
+  def self.doctors
+    where(role_id: Role.doctor.id)
+  end
+
+  def self.patients
+    where(role_id: Role.patient.id)
+  end
 
   private
 
