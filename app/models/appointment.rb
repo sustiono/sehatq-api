@@ -10,8 +10,9 @@
 #
 # Indexes
 #
-#  index_appointments_on_schedule_id  (schedule_id)
-#  index_appointments_on_user_id      (user_id)
+#  index_appointments_on_schedule_id              (schedule_id)
+#  index_appointments_on_user_id                  (user_id)
+#  index_appointments_on_user_id_and_schedule_id  (user_id,schedule_id) UNIQUE
 #
 # Foreign Keys
 #
@@ -20,6 +21,9 @@
 #
 class Appointment < ApplicationRecord
   validates :schedule_id, :user_id, presence: true
+  validates :schedule_id, uniqueness: {
+    scope: :user_id, message: 'Can only make 1 appointment in 1 schedule'
+  }
 
   before_validation :time_validation, :availbility_schedule_validation
 
@@ -30,7 +34,9 @@ class Appointment < ApplicationRecord
 
   def time_validation
     if DateTime.current < doctor_schedule.start_time  || DateTime.current > doctor_schedule.end_time
-      self.errors.add(:time, 'Make an appointment within 30 minutes before the schedule starts')
+      self.errors.add(
+        :time, 'Make an appointment within 30 minutes before the schedule starts'
+      )
     end
   end
 
