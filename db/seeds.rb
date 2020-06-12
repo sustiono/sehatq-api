@@ -20,7 +20,9 @@ end
 if User.doctors.empty?
   1.upto(10) do
     User.create({
-      email: Faker::Internet.email,
+      name: Faker::Name.unique.name,
+      address: Faker::Address.full_address,
+      email: Faker::Internet.unique.email,
       password: 'asdfasdf',
       password_confirmation: 'asdfasdf',
       role_id: Role.doctor.id
@@ -32,7 +34,9 @@ end
 if User.patients.empty?
   1.upto(10) do
     User.create({
-      email: Faker::Internet.email,
+      name: Faker::Name.unique.name,
+      address: Faker::Address.full_address,
+      email: Faker::Internet.unique.email,
       password: 'asdfasdf',
       password_confirmation: 'asdfasdf',
       role_id: Role.patient.id

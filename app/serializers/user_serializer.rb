@@ -20,30 +20,9 @@
 #
 #  fk_rails_...  (role_id => roles.id)
 #
-class User < ApplicationRecord
-  has_secure_password
-
-  validates :email, uniqueness: true
-  validates_format_of :email, with: /@/
-  validates :password_digest, :role_id, presence: true
-
-  has_many  :schedules
-
+class UserSerializer < ActiveModel::Serializer
+  has_many    :schedules
   belongs_to  :role
 
-  after_create  :create_token
-
-  def self.doctors
-    where(role_id: Role.doctor.id)
-  end
-
-  def self.patients
-    where(role_id: Role.patient.id)
-  end
-
-  private
-
-  def create_token
-    self.update_column(:token, JsonWebToken.encode(user_id: self.id))
-  end
+  attributes :id, :name, :address, :email
 end

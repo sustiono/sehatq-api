@@ -20,11 +20,9 @@
 #  fk_rails_...  (hospital_id => hospitals.id)
 #  fk_rails_...  (user_id => users.id)
 #
-class Schedule < ApplicationRecord
-  validates :start_time, :end_time, presence: true
+class ScheduleSerializer < ActiveModel::Serializer
+  has_many    :patients
+  belongs_to  :doctor
 
-  has_many  :appointments
-  has_many  :patients, through: :appointments
-
-  belongs_to  :doctor, class_name: 'User', foreign_key: :user_id
+  attributes :id, :id, :start_time, :end_time
 end
