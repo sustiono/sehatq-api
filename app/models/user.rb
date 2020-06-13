@@ -25,7 +25,7 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true
   validates_format_of :email, with: /@/
-  validates :password_digest, :role_id, presence: true
+  validates :password_digest, :role_id, :name, presence: true
 
   has_many  :schedules
 
