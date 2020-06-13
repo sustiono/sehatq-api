@@ -1,24 +1,20 @@
-# README
+# Sehatq API
+API for making appointments between patients and doctors
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Usage
 
-Things you may want to cover:
+```bash
+git clone git@github.com:sustiono/sehatq-api.git
+cd sehatq-api
+bundle install
+rails db:create
+rails db:migrate
+rails db:seed
+rails s
 
-* Ruby version
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Requirements
+1. ruby 2.6
+2. Rails 6.0
+3. psql 12.2
