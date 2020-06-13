@@ -17,6 +17,6 @@ class ApplicationController < ActionController::API
   private
 
   def unauthenticable_controller?
-    controller_path == 'api/v1/users'
+    ['api/v1/users', 'api/v1/tokens'].include? controller_path
   end
 end
