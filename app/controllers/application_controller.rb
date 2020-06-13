@@ -18,5 +18,6 @@ class ApplicationController < ActionController::API
 
   def unauthenticable_controller?
     controller_path == 'api/v1/users'
+    true
   end
 end
