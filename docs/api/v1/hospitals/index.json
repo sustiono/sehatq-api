@@ -1,0 +1,92 @@
+{
+  "published": true,
+  "name": "List Hospitals",
+  "sort_order": 4,
+  "end_point": "api/v1/hospitals",
+  "http_method": "GET",
+  "params": [],
+  "header": {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+    "Authorization": "Bearer your_token"
+  },
+  "examples": [{
+    "request_headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMH0.LkH0DGuFHLwPytYCPZOqVBJo7KU0lMWW-VlasK7Tmu8"
+    },
+    "response": [
+      {
+          "id": 1,
+          "name": "Ortiz-Schroeder Center",
+          "address": "Apt. 911 269 Torrie Ports, Port Denisshire, IN 44743-7689",
+          "created_at": "2020-06-10T15:24:35.336Z",
+          "updated_at": "2020-06-10T15:24:35.336Z"
+      },
+      {
+          "id": 2,
+          "name": "Rowe, Leuschke and Dibbert Center",
+          "address": "18449 Alton Corners, New Dorathy, MI 36719",
+          "created_at": "2020-06-10T15:24:35.356Z",
+          "updated_at": "2020-06-10T15:24:35.356Z"
+      },
+      {
+          "id": 3,
+          "name": "Yundt, Franecki and Conn Center",
+          "address": "859 Schneider Flats, Ornville, MS 70254",
+          "created_at": "2020-06-10T15:24:35.367Z",
+          "updated_at": "2020-06-10T15:24:35.367Z"
+      },
+      {
+          "id": 4,
+          "name": "Shanahan-Raynor Center",
+          "address": "Suite 399 45361 Hipolito Meadows, Breitenbergport, VT 65860-7896",
+          "created_at": "2020-06-10T15:24:35.380Z",
+          "updated_at": "2020-06-10T15:24:35.380Z"
+      },
+      {
+          "id": 5,
+          "name": "Lueilwitz-Legros Center",
+          "address": "Apt. 423 4214 Tillman Expressway, O'Connellton, WI 21438",
+          "created_at": "2020-06-10T15:24:35.389Z",
+          "updated_at": "2020-06-10T15:24:35.389Z"
+      },
+      {
+          "id": 6,
+          "name": "Baumbach, Reilly and Lindgren Center",
+          "address": "Suite 127 762 Enedina Expressway, Watsicatown, MD 22705",
+          "created_at": "2020-06-10T15:24:35.400Z",
+          "updated_at": "2020-06-10T15:24:35.400Z"
+      },
+      {
+          "id": 7,
+          "name": "Reichel, Rice and Koss Center",
+          "address": "Apt. 227 86500 Kiehn Grove, Port Marty, FL 50002",
+          "created_at": "2020-06-10T15:24:35.423Z",
+          "updated_at": "2020-06-10T15:24:35.423Z"
+      },
+      {
+          "id": 8,
+          "name": "Schmitt, Braun and Gleason Center",
+          "address": "Suite 172 511 Emard Field, Sondrachester, KY 89688-8547",
+          "created_at": "2020-06-10T15:24:35.433Z",
+          "updated_at": "2020-06-10T15:24:35.433Z"
+      },
+      {
+          "id": 9,
+          "name": "Sauer-Runte Center",
+          "address": "469 Silvana Ways, Port Reginald, NM 07729",
+          "created_at": "2020-06-10T15:24:35.445Z",
+          "updated_at": "2020-06-10T15:24:35.445Z"
+      },
+      {
+          "id": 10,
+          "name": "Auer, Bode and Sanford Center",
+          "address": "Apt. 621 3720 Borer Greens, South Brant, HI 91278",
+          "created_at": "2020-06-10T15:24:35.456Z",
+          "updated_at": "2020-06-10T15:24:35.456Z"
+      }
+    ]
+  }]
+}

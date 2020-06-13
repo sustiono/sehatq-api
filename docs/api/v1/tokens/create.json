@@ -1,0 +1,48 @@
+{
+  "published": true,
+  "name": "Get Token",
+  "sort_order": 2,
+  "end_point": "api/v1/tokens",
+  "http_method": "POST",
+  "params": [
+    {
+      "key": "user[email]",
+      "required": true,
+      "type": "String",
+      "description": "Email"
+    },
+    {
+      "key": "user[password]",
+      "required": true,
+      "type": "String",
+      "description": "Password"
+    }
+  ],
+  "header": {
+    "Accept": "application/json",
+    "Content-Type": "application/json"
+  },
+  "examples": [{
+    "request_headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "request": {
+      "user": {
+        "email": "dokter-tirta@mail.com",
+        "password": 123456
+      }
+    },
+    "response": {
+      "id": 27,
+      "email": "dokter-tirta@mail.com",
+      "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyN30.xO_PC2uKYIkw5Ph_KAkaodRzPCYjEqj4azW1_tVwuO4",
+      "password_digest": "$2a$12$MlxdPLE27aF4ug9A79huz.6Hre9Xlf6b.zf/XopYxzAdfhdz30vJC",
+      "created_at": "2020-06-13T14:04:05.494Z",
+      "updated_at": "2020-06-13T14:04:05.501Z",
+      "role_id": 1,
+      "address": "Jl. SehatQ No. 1",
+      "name": "dr. Tirta"
+    }
+  }]
+}

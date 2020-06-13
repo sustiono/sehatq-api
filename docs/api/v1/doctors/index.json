@@ -1,0 +1,49 @@
+{
+  "published": true,
+  "name": "List Doctors",
+  "sort_order": 3,
+  "end_point": "api/v1/doctors?include_schedule=true",
+  "http_method": "GET",
+  "params": [],
+  "header": {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+    "Authorization": "Bearer your_token"
+  },
+  "examples": [{
+    "request_headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMH0.LkH0DGuFHLwPytYCPZOqVBJo7KU0lMWW-VlasK7Tmu8"
+    },
+    "response": [
+      {
+        "id": 1,
+        "name": "dr. Tirta",
+        "email": "dokter-tirta@mail.com",
+        "address": "Jl. SehatQ No. 1",
+        "schedules": [
+          {
+            "id": 1,
+            "start_time": "2020-06-11T09:00:00.000Z",
+            "end_time": "2020-06-11T12:00:00.000Z",
+            "patients": [
+              {
+                "id": 11,
+                "name": "Tommie Tillman DDS",
+                "address": "45784 Marquis Glens, Lake Herschel, MI 08585-1366",
+                "email": "emogene_heaney@simonis.net"
+              },
+              {
+                "id": 2,
+                "name": "David Beckham",
+                "address": null,
+                "email": "beckham@mail.com"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }]
+}
