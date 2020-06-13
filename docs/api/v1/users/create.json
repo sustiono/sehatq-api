@@ -1,0 +1,76 @@
+{
+  "published": true,
+  "name": "Create Users",
+  "sort_order": 1,
+  "end_point": "api/v1/users",
+  "http_method": "POST",
+  "params": [
+    {
+      "key": "user[name]",
+      "required": true,
+      "type": "String",
+      "description": "Name"
+    },
+    {
+      "key": "user[email]",
+      "required": true,
+      "type": "String",
+      "description": "Email"
+    },
+    {
+      "key": "user[address]",
+      "required": false,
+      "type": "String",
+      "description": "Address"
+    },
+    {
+      "key": "user[password]",
+      "required": true,
+      "type": "String",
+      "description": "Password"
+    },
+    {
+      "key": "user[password_confirmation]",
+      "required": true,
+      "type": "String",
+      "description": "Password Confirmation"
+    },
+    {
+      "key": "user[role_id]",
+      "required": true,
+      "type": "Integer",
+      "description": "The role of user (doctor or patient)"
+    }
+  ],
+  "header": {
+    "Accept": "application/json",
+    "Content-Type": "application/json"
+  },
+  "examples": [{
+    "request_headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "request": {
+      "user": {
+        "name": "dr. Tirta",
+        "email": "dokter-tirta@mail.com",
+        "address": "Jl. SehatQ No. 1",
+        "password": "123456",
+        "password_confirmation": "123456",
+        "role_id": 1
+      }
+    },
+    "response": {
+      "id": 1,
+      "name": "dr. Tirta",
+      "address": "Jl. SehatQ No. 1",
+      "email": "dokter-tirta@mail.com",
+      "schedules": [],
+      "role": {
+        "id": 1,
+        "name": "Doctor"
+      }
+    }
+  }]
+}
